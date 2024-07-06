@@ -2,13 +2,13 @@
     <!-- Desktop -->
     <div class="max-w-7xl mx-auto hidden md:flex justify-between">
         <div>
-            <a class="py-2 px-3 inline-block font-semibold text-sm hover:text-slate-800" href="index.php">Home</a>
-            <a class="py-2 px-3 inline-block font-semibold text-sm hover:text-slate-800" href="rooms.php">Rooms</a>
-            <a class="py-2 px-3 inline-block font-semibold text-sm hover:text-slate-800" href="about.php">About</a>
+            <a class="py-2 px-3 inline-block font-semibold text-sm hover:text-slate-800 translate-all ease-in-out" href="index.php">Home</a>
+            <a class="py-2 px-3 inline-block font-semibold text-sm hover:text-slate-800 translate-all ease-in-out" href="rooms.php">Rooms</a>
+            <a class="py-2 px-3 inline-block font-semibold text-sm hover:text-slate-800 translate-all ease-in-out" href="about.php">About</a>
         </div>
         <div>
-            <a class="py-2 px-3 inline-block font-semibold text-sm hover:text-slate-800" href="reservation.php">Reservation</a>
-            <a class="py-2 px-3 inline-block font-semibold text-sm hover:text-slate-800" href="contact.php">Contact</a>
+            <a class="py-2 px-3 inline-block font-semibold text-sm hover:text-slate-800 translate-all ease-in-out" href="reservation.php">Reservation</a>
+            <a class="py-2 px-3 inline-block font-semibold text-sm hover:text-slate-800 translate-all ease-in-out" href="contact.php">Contact</a>
             <a class="py-2 px-5 mr-3 rounded-md inline-block font-semibold text-sm
                 text-white bg-blue-500 hover:bg-blue-600 transition-all ease-in-out" href="login.php">Login</a>
         </div>
