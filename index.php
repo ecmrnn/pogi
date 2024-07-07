@@ -39,7 +39,7 @@
                     <button type="button" class="less-btn py-2 px-3 w-16 flex-shrink-0 border border-r-0 grid place-items-center rounded-s-md">
                         <span class="material-symbols-outlined opacity-75">remove</span>
                     </button>
-                    <input type="number" name="adult_count" class="[appearance:textfield] px-3 py-2 w-full border peer" placeholder="Adult" required>
+                    <input type="number" name="adult_count" class="[appearance:textfield] px-3 py-2 w-full border peer" min="1" placeholder="Adult" required>
                     <button type="button" class="add-btn py-2 px-3 w-16 flex-shrink-0 border border-l-0 grid place-items-center rounded-e-md">
                         <span class="material-symbols-outlined opacity-75">add</span>
                     </button>
