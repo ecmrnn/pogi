@@ -12,7 +12,7 @@
     <script src="assets/js/reservation.js" defer></script>
 </head>
 
-<body class="text-slate-800/80 text-sm">
+<body class="bg-slate-50 text-slate-800/80 text-sm">
     <?php include('components/nav.php'); ?>
 
     <main class="pt-40 min-h-screen">
@@ -37,21 +37,21 @@
 
                 <div class="flex">
                     <button type="button" class="less-btn py-2 px-3 w-16 flex-shrink-0 border border-r-0 grid place-items-center rounded-s-md">
-                        <span class="material-symbols-outlined font-semibold">remove</span>
+                        <span class="material-symbols-outlined opacity-75">remove</span>
                     </button>
-                    <input type="text" name="adult_count" class="px-3 py-2 w-full border peer" placeholder="Adult" required>
+                    <input type="number" name="adult_count" class="[appearance:textfield] px-3 py-2 w-full border peer" placeholder="Adult" required>
                     <button type="button" class="add-btn py-2 px-3 w-16 flex-shrink-0 border border-l-0 grid place-items-center rounded-e-md">
-                        <span class="material-symbols-outlined font-semibold">add</span>
+                        <span class="material-symbols-outlined opacity-75">add</span>
                     </button>
                 </div>
 
                 <div class="flex">
                     <button type="button" class="less-btn py-2 px-3 w-16 flex-shrink-0 border grid place-items-center rounded-s-md">
-                        <span class="material-symbols-outlined font-semibold">remove</span>
+                        <span class="material-symbols-outlined opacity-75">remove</span>
                     </button>
-                    <input type="text" name="children_count" class="px-3 py-2 w-full border border-x-0" min="0" placeholder="Children">
+                    <input type="number" name="children_count" class="[appearance:textfield] px-3 py-2 w-full border border-x-0" min="0" placeholder="Children">
                     <button type="button" class="add-btn py-2 px-3 w-16 flex-shrink-0 border grid place-items-center rounded-e-md">
-                        <span class="material-symbols-outlined font-semibold">add</span>
+                        <span class="material-symbols-outlined opacity-75">add</span>
                     </button>
                 </div>
     

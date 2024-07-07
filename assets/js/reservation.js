@@ -7,7 +7,7 @@ addBtn.forEach(btn => {
         let input = btn.previousElementSibling;
         
         try {
-            let newValue = eval(input.value) + 1;
+            let newValue = parseInt(input.value) + 1;
 
             input.value == ''
                     ? input.value = 1
@@ -23,7 +23,7 @@ lessBtn.forEach(btn => {
         let input = btn.nextElementSibling;
 
         try {
-            let newValue = eval(input.value) - 1;   
+            let newValue = parseInt(input.value) - 1;   
 
             if (newValue <= 0 || input.value == '') {
                 input.value = '';
