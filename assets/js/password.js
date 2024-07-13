@@ -1,7 +1,11 @@
 let password = document.querySelector("#togglePassword")
     .addEventListener("change", () => {
-        let type = document.querySelector("#password").getAttribute("type");
-        type === 'password'
-            ? document.querySelector("#password").setAttribute("type", "text")
-            : document.querySelector("#password").setAttribute("type", "password");
+        let passwords = document.querySelectorAll("input.password");
+        passwords.forEach(password => {
+            let type = password.getAttribute("type");
+
+            type === 'password'
+                ? password.setAttribute("type", "text")
+                : password.setAttribute("type", "password");
+        });
     })

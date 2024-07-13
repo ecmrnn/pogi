@@ -1,5 +1,8 @@
 <?php 
     $path = explode('/', $_SERVER['PHP_SELF']);
+    $protocol = isset($_SERVER['HTTPS']) && 
+    $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
+    $base_url = $protocol . $_SERVER['HTTP_HOST'] . '/activities/FINALS/PROJECT/';
 ?>
 
 <nav class="fixed w-screen top-0 border-b z-50">
@@ -9,14 +12,14 @@
     <!-- Desktop -->
     <div class="py-2 max-w-7xl mx-auto hidden md:flex justify-between">
         <div>
-            <a class="py-2 px-3 inline-block font-semibold text-sm transition-all ease-in-out <?php echo in_array('index.php', $path) ? 'text-blue-500' : 'hover:text-slate-800';?>" href="index.php">Home</a>
-            <a class="py-2 px-3 inline-block font-semibold text-sm transition-all ease-in-out <?php echo in_array('rooms.php', $path) ? 'text-blue-500' : 'hover:text-slate-800';?>" href="rooms.php">Rooms</a>
-            <a class="py-2 px-3 inline-block font-semibold text-sm transition-all ease-in-out <?php echo in_array('about.php', $path) ? 'text-blue-500' : 'hover:text-slate-800';?>" href="about.php">About</a>
+            <a class="py-2 px-3 rounded-md inline-block font-semibold text-sm transition-all ease-in-out <?php echo in_array('index.php', $path) ? 'text-blue-500' : 'hover:text-slate-800';?>" href="<?php echo $base_url; ?>index.php">Home</a>
+            <a class="py-2 px-3 rounded-md inline-block font-semibold text-sm transition-all ease-in-out <?php echo in_array('rooms.php', $path) || in_array('rooms', $path) ? 'text-blue-500' : 'hover:text-slate-800';?>" href="<?php echo $base_url; ?>rooms.php">Rooms</a>
+            <a class="py-2 px-3 rounded-md inline-block font-semibold text-sm transition-all ease-in-out <?php echo in_array('about.php', $path) ? 'text-blue-500' : 'hover:text-slate-800';?>" href="<?php echo $base_url; ?>about.php">About</a>
         </div>
         <div>
-            <a class="py-2 px-3 inline-block font-semibold text-sm transition-all ease-in-out <?php echo in_array('reservation.php', $path) ? 'text-blue-500' : 'hover:text-slate-800';?>" href="reservation.php">Reservation</a>
-            <a class="py-2 px-3 inline-block font-semibold text-sm transition-all ease-in-out <?php echo in_array('contact.php', $path) ? 'text-blue-500' : 'hover:text-slate-800';?>" href="contact.php">Contact</a>
-            <a class="py-2 px-5 mr-3 rounded-md inline-block font-semibold text-sm
+            <a class="py-2 px-3 rounded-md inline-block font-semibold text-sm transition-all ease-in-out <?php echo in_array('reservation.php', $path) ? 'text-blue-500' : 'hover:text-slate-800';?>" href="<?php echo $base_url; ?>reservation.php">Reservation</a>
+            <a class="py-2 px-3 rounded-md inline-block font-semibold text-sm transition-all ease-in-out <?php echo in_array('contact.php', $path) ? 'text-blue-500' : 'hover:text-slate-800';?>" href="<?php echo $base_url; ?>contact.php">Contact</a>
+            <a class="py-2 px-5 mx-3 rounded-md inline-block font-semibold text-sm
                 text-white bg-blue-500 hover:bg-blue-600 transition-all ease-in-out" href="login.php">Login</a>
         </div>
     </div>
