@@ -21,6 +21,7 @@
                         <h1 class="text-2xl font-semibold">Settings</h1>
                         <p class="max-w-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolor?</p>
                     </hgroup>
+                    
                     <form action="" class="grid grid-cols-2 gap-3">
                         <div class="space-y-3 p-3 border rounded-md">
                             <h2 class="text-lg font-semibold">Personal Information</h2>
