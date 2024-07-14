@@ -5,7 +5,6 @@
     <?php 
         include('components/head.php');
     ?>
-    <script src="assets/js/reservation.js" defer></script>
 </head>
 
 <body class="bg-slate-50 text-slate-800/80 text-sm">

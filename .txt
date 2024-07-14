@@ -1,0 +1,21 @@
+Reservation form
+
+Reservation Details
+- Adult Count
+- Children Count
+- Check-in Date
+- Check-out Date
+- Room to reserve
+
+Guest Details
+- First name
+- Last name
+- Address
+- Contact Number
+- Email
+
+Addons
+- Towels
+- Slippers
+- Toiletries
+- Snacks

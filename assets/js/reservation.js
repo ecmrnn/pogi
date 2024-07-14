@@ -40,8 +40,6 @@ checkInDate.addEventListener("change", () => {
     let checkOutDate = document.querySelector("#check_out_date");
     let checkInValue = checkInDate.value;
 
-
-    console.log(checkInValue)
     if (checkInValue !== '') {
         checkOutDate.removeAttribute("disabled");
         checkOutDate.setAttribute("min", checkInValue);
@@ -50,3 +48,26 @@ checkInDate.addEventListener("change", () => {
         checkOutDate.setAttribute("disabled", "true");
     }
 })
+
+let rooms = document.querySelectorAll(".select-room");
+
+rooms.forEach(room => {
+    room.addEventListener("click", () => {
+        let id = room.getAttribute("id");
+        let room_id = document.querySelector("#room_id");
+
+        rooms.forEach(room => {
+            room.classList.remove("bg-blue-500")
+            room.classList.remove("border-blue-500")
+            room.classList.remove("text-white")
+            room.innerHTML = "Select this room"
+        })
+
+        room.classList.add("bg-blue-500")
+        room.classList.add("border-blue-500")
+        room.classList.add("text-white")
+        room.innerHTML = "Room Selected"
+
+        room_id.value = id;
+    })
+});

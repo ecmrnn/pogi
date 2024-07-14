@@ -11,7 +11,24 @@
 <body class="bg-slate-50 text-slate-800/80 text-sm">
     <?php include('components/nav.php'); ?>
 
-    <main class="pt-40 min-h-screen">
+    <main class="py-40">
+        <div class="px-3 max-w-7xl mx-auto">
+            <hgroup class="space-y-5">
+                <h1 class="text-3xl text-center font-semibold
+                    md:text-left md:text-5xl
+                    lg:text-6xl">
+                    Your Dream Getaway<br>
+                    Starts at Prestige
+                </h1>
+                <p class="text-center md:text-left mx-auto md:mx-0 max-w-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, delectus.</p>
+                <a href="#pogi" class="px-4 py-2 w-max mx-auto md:mx-0 text-center rounded-md text-white font-semibold bg-blue-500 block hover:bg-blue-600 transition-all ease-in-out">
+                    About Prestige
+                </a>
+            </hgroup>
+        </div>
+    </main>
+
+    <section id="pogi" class="py-20 bg-white min-h-screen">
         <div class="px-3 max-w-7xl mx-auto grid md:grid-cols-2 gap-5">
             <div class="space-y-5">
                 <h1 class="text-3xl text-center font-semibold
@@ -73,7 +90,7 @@
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <?php include('components/footer.php'); ?>
 </body>

@@ -34,7 +34,7 @@
                     <div class="space-y-5">
                         <hgroup>
                             <h2 class="text-lg font-semibold">Lorem, ipsum.</h2>
-                            <p class="text-sm text-black/50">5,000.00&#47;night</p>
+                            <p class="text-sm text-black/50">&#8369; 5,000.00&#47;night</p>
                             <p class="mt-3 text-justify max-w-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui at excepturi quasi provident optio est porro dicta modi, molestias pariatur id in iste natus minus.</p>
                         </hgroup>
                         
