@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+    if (isset($_SESSION["first_name"])) {
+        header("Location: guest/dashboard.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +25,34 @@
                 <h2 class="font-semibold text-2xl">Login</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, quo!</p>
                 
-                <label for="username" class="font-semibold">Email &#47; Username</label>
+                <!-- Error message -->
+                 <p class="<?php echo isset($_GET["error"]) ? '' : 'hidden' ?> px-3 py-2 bg-red-50 border border-red-200 rounded-md text-red-400 flex items-center gap-3">
+                    <span class="material-symbols-outlined">error</span>
+                    <?php 
+                        if (isset($_GET["error"])) {
+                            if ($_GET["error"] == 'user_not_found') {
+                                echo 'Login failed, incorrect user credentials.';
+                            } else if ($_GET["error"] == 'user_deactivated') {
+                                echo 'Login failed, attempted to use a deactivated account.';
+                            }
+                        }
+                    ?>
+                </p>
+                
+                <!-- Success created user message -->
+                <p class="<?php echo isset($_GET["success"]) ? '' : 'hidden' ?> px-3 py-2 bg-green-50 border border-green-400 rounded-md text-green-500 flex items-center gap-3">
+                    <span class="material-symbols-outlined">celebration</span>
+                    <?php 
+                        if (isset($_GET["success"])) {
+                            if ($_GET["success"] == 'created_user') {
+                                echo 'Signup successful!';
+                            } 
+                        }
+                    ?>
+                    <button type="button" onclick="this.parentElement.classList.add('hidden')" class="material-symbols-outlined ml-auto">close</button>
+                </p>
+
+                <label for="username" class="font-semibold">Username</label>
                 <input type="text" name="username" id="username" class="px-3 py-2 w-full rounded-md border peer" placeholder="juan.delacruz@mail.com" required>
 
                 <label for="password" class="font-semibold">Password</label>

@@ -1,3 +1,11 @@
+<?php 
+    session_start();
+    
+    if (!isset($_SESSION["first_name"])) {
+        header("Location: ../login.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,10 +23,16 @@
             <?php include('../components/guest-nav.php'); ?>
             
             <div class="bg-white rounded-md p-3 shadow-lg w-full space-y-3">
-                <hgroup>
-                    <h1 class="text-2xl font-semibold">Dashboard</h1>
-                    <p class="max-w-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, deserunt.</p>
-                </hgroup>
+                <div class="flex justify-between items-start">
+                    <hgroup>
+                        <h1 class="text-2xl font-semibold">Hello, <?php echo $_SESSION["first_name"];?>!</h1>
+                        <p class="max-w-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, deserunt.</p>
+                    </hgroup>
+
+                    <form method="POST" action="../users/logout.php">
+                        <button onclick="confirm('You really want to logout?') ? true : event.preventDefault();" type="submit" class="py-2 px-5 rounded-md font-semibold text-sm text-white bg-red-400 hover:bg-red-500 transition-all ease-in-out">Logout</button>
+                    </form>
+                </div>
 
                 <div class="grid grid-cols-4 gap-3">
                     <a href="reservation.php" class="block gap-3 group">

@@ -1,3 +1,6 @@
+-- DELETE FROM users;
+-- ALTER TABLE users AUTO_INCREMENT = 1;
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/

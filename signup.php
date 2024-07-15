@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+    if (isset($_SESSION["first_name"])) {
+        header("Location: guest/dashboard.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,16 +25,83 @@
                 <h2 class="font-semibold text-2xl">Signup</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, quo!</p>
                 
+                <!-- General Error message -->
+                <p class="<?php echo isset($_GET["err_db"]) ? '' : 'hidden' ?> px-3 py-2 bg-red-50 border border-red-200 rounded-md text-red-400 flex items-center gap-3">
+                    <span class="material-symbols-outlined">error</span>
+                    <?php 
+                        if (isset($_GET["err_db"])) {
+                            if ($_GET["err_db"] == 'dupe_u') {
+                                echo 'Signup failed, username already in used.';
+                            } 
+                        }
+                    ?>
+                </p>
+                
                 <label for="first_name" class="font-semibold">First &amp; Last Name</label>
-                <input type="text" name="first_name" id="first_name" class="px-3 py-2 w-full rounded-md border peer" placeholder="Juan" required>
-                <input type="text" name="last_name" id="last_name" class="px-3 py-2 w-full rounded-md border peer" placeholder="Dela Cruz" required>
+                <input type="text" name="first_name" id="first_name" class="px-3 py-2 w-full rounded-md border peer" placeholder="Juan" value="<?php echo isset($_GET["fname"]) ? $_GET["fname"] : null ?>" required>
+                <input type="text" name="last_name" id="last_name" class="px-3 py-2 w-full rounded-md border peer" placeholder="Dela Cruz" value="<?php echo isset($_GET["lname"]) ? $_GET["lname"] : null ?>" required>
+
+                <!-- First Name Error message -->
+                <div class="<?php echo isset($_GET["err_f"]) || isset($_GET["err_l"]) ? '' : 'hidden' ?> px-3 py-2 bg-red-50 border border-red-200 rounded-md text-red-400 flex items-center gap-3">
+                    <span class="material-symbols-outlined">error</span>
+                    <div>
+                        <?php
+                            if (isset($_GET["err_f"]) && isset($_GET["err_l"])) {
+                                echo '<p>First and Last name is required.</p>';
+                            } else if (isset($_GET["err_f"])) {
+                                echo '<p>First name is required.</p>';
+                            } else {
+                                echo '<p>Last name is required.</p>';
+                            }
+                        ?>
+                    </div>
+                </div>
 
                 <label for="username" class="font-semibold">Username</label>
                 <input type="text" name="username" id="username" class="px-3 py-2 w-full rounded-md border peer" placeholder="juan.delacruz" required>
 
+                <!-- Username Error message -->
+                <div class="<?php echo isset($_GET["err_u"]) || isset($_GET["err_cp"]) ? '' : 'hidden' ?> px-3 py-2 bg-red-50 border border-red-200 rounded-md text-red-400 flex items-center gap-3">
+                    <span class="material-symbols-outlined">error</span>
+                    <div>
+                        <?php
+                            if (isset($_GET["err_u"])) {
+                                if ($_GET["err_u"] == 'special_char') {
+                                    echo '<p>Special characters are not allowed.</p>';
+                                }
+                                elseif ($_GET["err_u"] == 'not_null') {
+                                    echo '<p>Username is required.</p>';
+                                }
+                            }
+                        ?>
+                    </div>
+                </div>
+
                 <label for="password" class="font-semibold">Password</label>
                 <input type="password" name="password" id="password" class="password px-3 py-2 w-full rounded-md border peer" placeholder="********" required>
                 <input type="password" name="confirm_password" id="confirm_password" class="password px-3 py-2 w-full rounded-md border peer" placeholder="********" required>
+
+                <!-- Password Error message -->
+                <div class="<?php echo isset($_GET["err_p"]) || isset($_GET["err_cp"]) ? '' : 'hidden' ?> px-3 py-2 bg-red-50 border border-red-200 rounded-md text-red-400 flex items-center gap-3">
+                    <span class="material-symbols-outlined">error</span>
+                    <div>
+                        <?php
+                            if (isset($_GET["err_p"])) {
+                                if ($_GET["err_p"] == 'too_short') {
+                                    echo '<p>Password must be atleast 8 characters.</p>';
+                                }
+                                elseif ($_GET["err_p"] == 'not_null') {
+                                    echo '<p>Password is required.</p>';
+                                }
+                            }
+                            if (isset($_GET["err_cp"])) {
+                                if ($_GET["err_cp"] == 'not_equal') {
+                                    echo '<p>Password is not equal.</p>';
+                                }
+                            }
+                        ?>
+                    </div>
+                </div>
 
                 <div class="flex gap-3">
                     <div class="relative">

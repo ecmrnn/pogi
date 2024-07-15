@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $min_date = date("Y-m-d");
 ?>
 

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +32,7 @@
         </div>
     </main>
 
-    <section id="pogi" class="py-20 bg-white min-h-screen">
+    <section id="pogi" class="py-20 bg-white">
         <div class="px-3 max-w-7xl mx-auto grid md:grid-cols-2 gap-5">
             <div class="space-y-5">
                 <h1 class="text-3xl text-center font-semibold
@@ -43,7 +47,7 @@
                     <!-- Image -->
                 </div>
 
-                <a href="reservation.php" class="px-4 py-2 w-max mx-auto md:mx-0 text-center rounded-md text-white font-semibold bg-blue-500 block hover:bg-blue-600 transition-all ease-in-out">
+                <a href="reservation/reservation.php" class="px-4 py-2 w-max mx-auto md:mx-0 text-center rounded-md text-white font-semibold bg-blue-500 block hover:bg-blue-600 transition-all ease-in-out">
                     Book a Room
                 </a>
             </div>

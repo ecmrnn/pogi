@@ -19,8 +19,14 @@
         <div>
             <a class="py-2 px-3 rounded-md inline-block font-semibold text-sm transition-all ease-in-out <?php echo in_array('reservation.php', $path) ? 'text-blue-500' : 'hover:text-slate-800';?>" href="<?php echo $base_url; ?>reservation/reservation.php">Reservation</a>
             <a class="py-2 px-3 rounded-md inline-block font-semibold text-sm transition-all ease-in-out <?php echo in_array('contact.php', $path) ? 'text-blue-500' : 'hover:text-slate-800';?>" href="<?php echo $base_url; ?>contact.php">Contact</a>
-            <a class="py-2 px-5 mx-3 rounded-md inline-block font-semibold text-sm
-                text-white bg-blue-500 hover:bg-blue-600 transition-all ease-in-out" href="<?php echo $base_url; ?>login.php">Login</a>
+            <a class="py-2 px-5 rounded-md mx-3 inline-block font-semibold text-sm
+                text-white bg-blue-500 hover:bg-blue-600 transition-all ease-in-out"
+                href="<?php echo $base_url; ?>login.php">
+                <?php 
+                    isset($_SESSION["first_name"]) ? $output = $_SESSION["first_name"][0] . $_SESSION["last_name"][0] : $output = 'Login';
+                    echo $output;
+                ?>
+            </a>
         </div>
     </div>
 
